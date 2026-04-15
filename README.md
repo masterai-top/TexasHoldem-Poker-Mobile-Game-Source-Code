@@ -14,7 +14,14 @@
 💰 Start your poker platform today  
 💰 Launch your poker business today  
 💰 Start earning with your own poker platform  
+💰 Launch your poker business fast  
 
+🔥 Multiplayer Poker System  
+🔥 Real-Time Gameplay  
+🔥 Mobile Ready  
+
+👉 🚀 Demo Available  
+👉 📩 Contact Now  
 
 ## 🚀 What You Get | 你将获得 | 你將獲得,支持5种语言的德州
 
@@ -136,8 +143,7 @@
 - ⚡ Real-time Gameplay（实时对局）  
 - 🌐 Online Server（在线服务器）  
 - 🔧 Customizable（可二次开发）  
-![Stars](https://img.shields.io/github/stars/masterai-top/TexasHoldem-Poker-Multiplayer-Source-Code-Pro?style=social)
-![Last Commit](https://img.shields.io/github/last-commit/masterai-top/TexasHoldem-Poker-Multiplayer-Source-Code-Pro)
+
 
 ## 🎥 Live Demo | 演示 | 演示
 
@@ -165,7 +171,8 @@ Watch real gameplay below 👇
 - Game development  
 - Commercial deployment  
 
-
+![Stars](https://img.shields.io/github/stars/masterai-top/TexasHoldem-Poker-Mobile-Game-Source-Code?style=social)
+![Last Commit](https://img.shields.io/github/last-commit/masterai-top/TexasHoldem-Poker-Mobile-Game-Source-Code)
 
 
 

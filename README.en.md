@@ -1,177 +1,70 @@
-[简体中文](README.md) | [繁體中文](README.zh-TW.md) | [English](README.en.md)
+[简体中文](README.md) | [繁體中文](README.zh-TW.md) | **English**
 
-# iOS and Android Mobile Texas Holdem Platform|Texas Hold'em Mobile Game Source Code
+# Mobile Texas Hold'em Source Code: Private Games and Poker Clubs
 
-💡 Quickly build your Texas Hold'em poker platform|Texas Hold'em poker
+This repository presents a Texas Hold'em product for iOS, Android and mobile use cases. Product material describes private friend games, familiar-player tables, clubs, leagues, classic Hold'em, Omaha, Short Deck, OFC Pineapple, AOF, SNG and MTT. The public source snapshot mainly exposes C++/Tars push services, online and game-state processing, room reporting, club review and club-fund request models.
 
+> The public repository is not a complete mobile client or commercial deployment package. Verify iOS, Android, H5, databases, admin panels, voice/video and full game implementations against the actual licensed delivery list. Concurrency, DAU, revenue and operating history require public load tests or audited evidence.
 
-🔥 Online Multiplayer Poker System
-🔥 Club System + Agent System
-🔥 Real-Time Gameplay + Full Source Code
+## Real product screenshots
 
+| Mobile lobby | Multiplayer table | Club/friend-game entry |
+|---|---|---|
+| ![Mobile Texas Holdem source code lobby](docs/assets/screenshots/mobile-poker-08.jpg) | ![Mobile multiplayer Texas Holdem table](docs/assets/screenshots/mobile-poker-07.jpg) | ![Poker club and familiar-player game screen](docs/assets/screenshots/mobile-poker-06.jpg) |
 
-👉 🚀 Live Demo Available
-👉 📩 Contact Now for Full Version
-💰 Launch your own poker business
-💰 Start your poker platform today
-💰 Start earning with your own poker platform
+| Private-game feature | Game settings | Results and account |
+|---|---|---|
+| ![Private friend poker game interface](docs/assets/screenshots/mobile-poker-05.jpg) | ![Mobile poker settings screen](docs/assets/screenshots/mobile-poker-04.jpg) | ![Poker player history and account screen](docs/assets/screenshots/mobile-poker-03.jpg) |
 
+## Product capabilities
 
-🔥 Multiplayer Poker System
-🔥 Real-Time Gameplay
-🔥 Mobile Ready
+- **Private and familiar-player games:** documented social tables for known players, friend groups and internal events.
+- **Clubs and leagues:** product material describes clubs, agents and leagues; public files expose club review, balance and fund-change request models.
+- **Mobile product direction:** the repository contains Unity-style metadata, `link.xml` and resource directories, while complete iOS/Android/H5 projects require separate verification.
+- **Real-time player state:** `UserStateProcessor` handles online state, game state, room address and statistics.
+- **Push and broadcast:** `PushServantImp` exposes direct messages, broadcasts, online state, batch game state and room-user reporting.
+- **Room and table reporting:** service interfaces include room users, blind users, online counts, table information and game addresses.
+- **Configuration modules:** CRUD-style headers exist for props, rewards and ranking-board configuration.
+- **Multiple game modes:** the documentation lists Hold'em, Omaha, Short Deck, OFC Pineapple, MTT, SNG and AOF, but the snapshot cannot verify every complete rules engine.
 
+## Private friend-game flow
 
-👉 🚀 Demo Available
-👉 📩 Contact Now
+1. A player signs in on mobile and opens the lobby or club.
+2. A host creates a private/friend table and selects visible room options.
+3. Familiar players join through the club, invitation or room entry.
+4. Server components track online state, game address and room information, then push updates.
+5. The client displays results and history; club funds, review and permissions depend on the complete licensed platform.
 
+## Verifiable source modules
 
-## 🚀 What You Get (Supports 5 Languages)
+| Area | Files | Verifiable responsibility |
+|---|---|---|
+| Push service | `PushServant.tars`, `PushServantImp.cpp/.h`, `PushServer.cpp` | Direct messages, broadcasts, state and room reporting |
+| User state | `UserStateProto.tars`, `UserStateProcessor.cpp/.h` | Online/game state, room location and statistics |
+| Club models | `audit_club.h`, `change_club_balance.h`, `change_club_fund.h` | Club review, balance and fund requests/responses |
+| Game state | `gameconfig.cpp`, `gameparameter.cpp`, `gamebegin.h`, `onready.h` | Room initialization and state-processing samples |
+| Configuration | `props_config/`, `props_reward_config/`, `rank_board_config/` | Props, rewards and ranking-board models |
+| Build | `makefile` and Tars interface files | C++ build and service-interface entry points |
 
+## Illustrated pages
 
+- [Mobile Texas Hold'em source code](https://masterai-top.github.io/TexasHoldem-Poker-Mobile-Game-Source-Code/en/texas-holdem-mobile-source-code.html)
+- [Private games and mobile poker clubs](https://masterai-top.github.io/TexasHoldem-Poker-Mobile-Game-Source-Code/en/private-club-poker-platform.html)
+- [Simplified Chinese private-game page](https://masterai-top.github.io/TexasHoldem-Poker-Mobile-Game-Source-Code/zh-cn/private-poker-game.html)
+- [Simplified Chinese familiar-player page](https://masterai-top.github.io/TexasHoldem-Poker-Mobile-Game-Source-Code/zh-cn/friend-poker-game.html)
 
-- Full Texas Hold'em poker system
-- Multiplayer real-time gameplay
-- Club system + agent system
-- Ready for deployment & customization
+## Clone and evaluate
 
+```bash
+git clone https://github.com/masterai-top/TexasHoldem-Poker-Mobile-Game-Source-Code.git
+cd TexasHoldem-Poker-Mobile-Game-Source-Code
+```
 
+Before building, inspect compiler, include, library and target settings in `makefile`, then install compatible C++ and Tars dependencies. Cloning only provides the public snapshot, not necessarily a production mobile client, database or admin platform.
 
+## Compliance and security
 
----
-## 🎰 Texas Hold'em Mobile Game Source Code
+Private games, clubs, virtual items, payments or similar features may be regulated by gaming, payment, privacy and age laws. Before deployment, verify licensing, third-party assets, account permissions, message security, randomness, game logs, anti-cheat, payments and local law. Illegal use is prohibited.
 
+Contact: Telegram `@xuzongbin001` · Email `ttpoker40@gmail.com` · [GitHub Issues](https://github.com/masterai-top/TexasHoldem-Poker-Mobile-Game-Source-Code/issues)
 
-> **Years of online operation | | Supports tens of thousands of concurrent players | Full source code + assets included**
-
-
-[![Contact](https://img.shields.io/badge/联系-TG%3A%40xuzongbin001-blue)](https://t.me/xuzongbin001)
-[![Platform](https://img.shields.io/badge/平台-iOS%20%7C%20Android%20%7C%20H5-green)]()
-[![Users](https://img.shields.io/badge/并发-数万玩家在线-red)]()
-
-
----
-
-
-## 📊 Operational Data
-
-
--
-Launch Date: **Years of stable operation**
-- Daily Active Users: **High turnover, authentic data**
-- Technical Support: **24/7 stable operation**
-
-
-## 🚀 Technical Architecture
-
-
-- **Server-side**: C++ (High performance, supports high concurrency)
-- **Client-side**: iOS/Android Native + H5
-- **Database**: MySQL + Redis
-- **Communication**: Proprietary encrypted protocol
-
-
-
-
-## 💰 Get the Source Code
-
-
-📱 **Telegram: @xuzongbin001**
-📧 **Email: ttpoker40@gmail.com**
-
-
-
-
----
-
-
-⭐ If you find this project valuable, please give it a Star to show your support~
-
-
-## 💼 Why This Project
-
-
-✔ Stable & tested system
-✔ Real multiplayer architecture
-✔ Suitable for commercial use
-✔ Flexible customization
-
-
-## 💰 Commercial Version
-
-
-🚀 Full version available with advanced features
-
-
-✔ Full backend system
-✔ Deployment support
-✔ Custom feature development
-✔ Long-term support
----
-## 💼 👉 CONTACT NOW
-
-
-📲 Telegram: your-telegram
-📧 Email: your-email
-
-
-## ✨ Key Highlights
-
-
-| Feature | Description |
-| :--- | :--- |
-| 🎮 **Multiple Game Modes** | Classic Texas Hold'em, Omaha, Short Deck, Pineapple (OFC), MTT, SNG, AOF |
-| 👥 **Social System** |
-Clubs, leagues, private games, voice & video chat |
-| 📱 **Cross-Platform Support** | iOS App, Android App, H5 Web Version |
-| 🏆 **High Concurrency** | Years of operation; proven capacity for tens of thousands of simultaneous players |
-| 🎨 **Complete Assets** | Full set of HD graphics, UI source files, and sound effects |
-
-
-## 🎯 Feature List
-✅ Private/Friendly Games ✅ Club System ✅ Major League Mode
-✅ Voice & Video Chat ✅ Insurance System ✅ Game Statistics
-✅ Multi-Table Tournaments (MTT) ✅ Sit & Go (SNG) ✅ AI/Bot Players
-✅ Real-time Voice ✅ Gift System ✅ Admin Backend
-
-
-## ✨ Key Features
-
-
-- 🧑‍🤝‍🧑 Multiplayer Poker
-- 🏆 Club System
-- 🧩 Agent System
-- ⚡ Real-time Gameplay
-- 🌐 Online Server
-- 🔧 Customizable (Supports further development)
-
-
-## 🎥 Live Demo | Demo | Demo
-
-
-View real game demo 👇
-![08](https://github.com/user-attachments/assets/2804b160-801b-417f-9d9b-bcf14bf4e8f8)
-![07](https://github.com/user-attachments/assets/13546423-78d4-40ee-bc7c-e77eabf1e69a)
-
-
-![06](https://github.com/user-attachments/assets/85e8f347-d8ea-4aee-ac72-1e95ef6224ce)
-![05](https://github.com/user-attachments/assets/50a20674-a513-417c-9970-c03626181d07)
-![04](https://github.com/user-attachments/assets/46f64087-07dc-4a41-9b44-5f3371c75424)
-![03](https://github.com/user-attachments/assets/9a41778e-990d-472b-8eb2-f4f29ec73a4e)
-![02](https://github.com/user-attachments/assets/5e7bfbf3-7b5b-4a7b-adb8-429e0380bad7)
-
-
-![01](https://github.com/user-attachments/assets/13fdb418-2faa-4887-a103-4e1622229f8a)
----
-
-
-## 📈 Use Cases
-
-
--Build poker platform
-
-- Game development
-
-- Commercial deployment
-![Stars](https://img.shields.io/github/stars/masterai-top/TexasHoldem-Poker-Mobile-Game-Source-Code?style=social)
-![Last Commit](https://img.shields.io/github/last-commit/masterai-top/TexasHoldem-Poker-Mobile-Game-Source-Code)

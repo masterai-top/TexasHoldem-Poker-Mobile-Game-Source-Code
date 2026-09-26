@@ -1,193 +1,71 @@
 [简体中文](README.md) | [繁體中文](README.zh-TW.md) | [English](README.en.md)
 
-# iOS 与 Android 移动端德州扑克平台|德州源码 | 德州私人局|德州俱樂部
+# 移动端德州扑克源码：私人局、熟人局与俱乐部系统
 
-💡 快速搭建你的德州扑克平台  
+这是一个面向 iOS、Android 与移动端产品形态的德州扑克源码展示项目。线上产品资料描述德州私人局、熟人局/朋友局、俱乐部、联盟、经典德州、奥马哈、短牌、大菠萝、AOF、SNG 与 MTT 等场景；当前公开仓库可验证的代码主要包括 C++/Tars 消息推送、在线与游戏状态、房间上报、俱乐部审核和俱乐部资金变更相关模块。
 
+> 重要：当前公开仓库不是完整客户端与商业部署包。iOS、Android、H5、数据库、管理后台、语音视频和完整玩法是否包含，应以实际目录、授权和交付清单为准。并发量、日活、流水和运营时长需要公开压测或审计材料验证。
 
+## 真实产品截图
 
-🔥 Online Multiplayer Poker System  
-🔥 Club System + Agent System  
-🔥 Real-Time Gameplay + Full Source Code  
+| 移动端大厅 | 牌桌界面 | 俱乐部/熟人局入口 |
+|---|---|---|
+| ![移动端德州扑克大厅源码界面](docs/assets/screenshots/mobile-poker-08.jpg) | ![德州扑克移动端多人牌桌](docs/assets/screenshots/mobile-poker-07.jpg) | ![德州俱乐部和熟人局界面](docs/assets/screenshots/mobile-poker-06.jpg) |
 
+| 私人局功能 | 游戏设置 | 战绩与账户页面 |
+|---|---|---|
+| ![德州私人局朋友局产品界面](docs/assets/screenshots/mobile-poker-05.jpg) | ![移动德州扑克设置页面](docs/assets/screenshots/mobile-poker-04.jpg) | ![德州扑克玩家战绩账户界面](docs/assets/screenshots/mobile-poker-03.jpg) |
 
-👉 🚀 Live Demo Available  
-👉 📩 Contact Now for Full Version  
-💰 Launch your own poker business  
-💰 Start your poker platform today  
-💰 Launch your poker business today  
-💰 Start earning with your own poker platform  
-💰 Launch your poker business fast  
+## 产品功能
 
+- **私人局/熟人局/朋友局**：产品资料描述为固定玩家创建和加入牌桌的社交场景，适用于熟人娱乐和内部活动。
+- **俱乐部与联盟**：README 展示俱乐部、代理与联盟方向；公开代码包含 `AuditClubRequest`、俱乐部余额及资金变更请求模型。
+- **移动端体验**：线上资料面向 iOS、Android 和 H5；仓库出现 Unity 风格 `.meta`、`link.xml` 与资源目录，但完整客户端工程需另行核对。
+- **多人实时状态**：`UserStateProcessor` 处理玩家在线状态、游戏状态、房间地址和统计。
+- **消息推送与广播**：`PushServantImp` 提供消息推送、广播、在线状态、批量游戏状态和房间用户上报接口。
+- **房间与牌桌上报**：服务接口包含房间用户、盲注用户、在线人数、牌桌信息和游戏地址等字段。
+- **配置模块**：仓库包含道具、奖励与排行榜配置的增删改查头文件。
+- **多玩法产品方向**：资料列出经典德州、奥马哈、短牌、大菠萝、MTT、SNG 和 AOF；当前公开快照不足以逐项验证完整规则实现。
 
-🔥 Multiplayer Poker System  
-🔥 Real-Time Gameplay  
-🔥 Mobile Ready  
+## 私人局与熟人局流程
 
+1. 玩家登录移动端并进入大厅或俱乐部。
+2. 房主创建私人桌/朋友局，设置可见的房间参数。
+3. 熟人通过俱乐部、邀请或房间入口加入牌桌。
+4. 服务端记录在线状态、游戏地址与房间信息，并向玩家推送状态。
+5. 对局结束后展示结果和战绩；俱乐部资金、审核及权限应由完整授权系统处理。
 
-👉 🚀 Demo Available  
-👉 📩 Contact Now  
+## 可验证技术模块
 
+| 模块 | 文件 | 可验证职责 |
+|---|---|---|
+| 推送服务 | `PushServant.tars`、`PushServantImp.cpp/.h`、`PushServer.cpp` | 单人消息、广播、状态和房间信息上报 |
+| 用户状态 | `UserStateProto.tars`、`UserStateProcessor.cpp/.h` | 在线状态、游戏状态、房间和统计 |
+| 俱乐部模型 | `audit_club.h`、`change_club_balance.h`、`change_club_fund.h` | 俱乐部审核、余额和资金变更请求/响应 |
+| 游戏状态 | `gameconfig.cpp`、`gameparameter.cpp`、`gamebegin.h`、`onready.h` | 房间游戏初始化与状态处理样本 |
+| 配置接口 | `props_config/`、`props_reward_config/`、`rank_board_config/` | 道具、奖励与排行榜配置模型 |
+| 构建 | `makefile`、Tars 接口文件 | C++ 服务编译和接口定义入口 |
 
-## 🚀 What You Get |你將獲得,支持6种语言的德州
+## 图文专题
 
+- [德州扑克源码与移动服务](https://masterai-top.github.io/TexasHoldem-Poker-Mobile-Game-Source-Code/zh-cn/texas-holdem-source-code.html)
+- [德州私人局源码与房间流程](https://masterai-top.github.io/TexasHoldem-Poker-Mobile-Game-Source-Code/zh-cn/private-poker-game.html)
+- [德州熟人局、朋友局源码](https://masterai-top.github.io/TexasHoldem-Poker-Mobile-Game-Source-Code/zh-cn/friend-poker-game.html)
+- [移动端德州俱乐部系统](https://masterai-top.github.io/TexasHoldem-Poker-Mobile-Game-Source-Code/zh-cn/poker-club-mobile.html)
+- [English mobile poker source overview](https://masterai-top.github.io/TexasHoldem-Poker-Mobile-Game-Source-Code/en/texas-holdem-mobile-source-code.html)
 
+## 获取与评估
 
-- 完整德州扑克系统源码  
-- 支持多人实时对战  
-- 俱乐部 + 代理体系  
-- 可直接部署或二次开发  
+```bash
+git clone https://github.com/masterai-top/TexasHoldem-Poker-Mobile-Game-Source-Code.git
+cd TexasHoldem-Poker-Mobile-Game-Source-Code
+```
 
+构建前需要检查 `makefile` 中的头文件、库和目标环境，并准备匹配版本的 C++ 与 Tars 依赖。克隆只获得当前公开快照，不代表包含可直接发布的完整移动客户端、数据库或运营后台。
 
+## 合规与安全
 
+私人局、俱乐部、虚拟道具、支付或类似功能可能受到当地游戏、支付、隐私和年龄法规限制。部署前应核对许可证、第三方素材、账户权限、消息安全、随机数、牌局日志、反作弊、支付与当地法律。严禁用于违法活动。
 
----
-## 🎰 德州扑克完整运营级源码 | Texas Hold'em Complete Game App Source Code
+联系：Telegram `@xuzongbin001` · Email `ttpoker40@gmail.com` · [GitHub Issues](https://github.com/masterai-top/TexasHoldem-Poker-Mobile-Game-Source-Code/issues)
 
-
-> **线上运营多年 | 支持数万玩家在线 | 全套源码+资源**
-
-
-[![Contact](https://img.shields.io/badge/联系-TG%3A%40xuzongbin001-blue)](https://t.me/xuzongbin001)
-[![Platform](https://img.shields.io/badge/平台-iOS%20%7C%20Android%20%7C%20H5-green)]()
-[![Users](https://img.shields.io/badge/并发-数万玩家在线-red)]()
-
-
----
-
-
-## 📊 运营数据
-
-
-- 上线时间：**多年稳定运营**
-- 日活玩家：**高流水，真实数据**
-- 技术支持：**7x24小时稳定运行**
-
-
-## 🚀 技术架构
-
-
-- **服务端**：C++ (高性能，支持并发能力需以公开测试结果验证)
-- **客户端**：iOS/Android原生 + H5
-- **数据库**：MySQL + Redis
-- **通信**：私有加密协议
-
-
-
-
-## 💰 获取源码
-
-
-📱 **Telegram：@xuzongbin001**  
-📧 **Email：ttpoker40@gmail.com**
-
-
-
-
-
----
-
-
-⭐ 如果觉得项目有价值，请Star支持一下～
-
-
-## 💼 Why This Project | 为什么选这个
-
-
-✔ Stable & tested system  
-✔ Real multiplayer architecture  
-✔ Suitable for commercial use  
-✔ Flexible customization  
-
-
-✔ 稳定成熟  
-✔ 真实多人架构  
-✔ 可商业化  
-✔ 支持定制  
-
-
-## 💰 Commercial Version | 商业版本
-
-
-🚀 Full version available with advanced features
-🚀 提供完整版（更多功能）
-🚀 提供完整商業版本
-
-
-✔ Full backend system
-✔ Deployment support
-✔ Custom feature development
-✔ Long-term support
----
-## 💼 👉 CONTACT NOW（最重要）
-
-
-
-📲 Telegram: your-telegram
-📧 Email: your-email
-
-
-## ✨ 核心亮点
-
-
-| 特性 | 说明 |
-| :--- | :--- |
-| 🎮 **多种玩法** | 经典德州、奥马哈、短牌、大菠萝、MTT、SNG、AOF |
-| 👥 **社交系统** | 俱乐部、联盟、朋友局（私人局）、语音视频聊天 |
-| 📱 **全端支持** | iOS App、Android App、H5网页版 |
-| 🏆 **并发能力需以公开测试结果验证** | 运营多年，真实支持数万玩家同时在线 |
-| 🎨 **完整资源** | 全套高清美术、UI源文件、音效 |
-
-
-## 🎯 功能清单
-✅ 私人局/朋友局 ✅ 俱乐部系统 ✅ 大联盟模式
-✅ 语音视频聊天 ✅ 保险系统 ✅ 战绩统计
-✅ 多桌锦标赛MTT ✅ 坐满即玩SNG ✅ 机器人陪玩
-✅ 实时语音 ✅ 礼物系统 ✅ 后台管理
-
-
-## ✨ Key Features 
-
-
-- 🧑‍🤝‍🧑 Multiplayer Poker（多人对战）  
-- 🏆 Club System（俱乐部系统）  
-- 🧩 Agent System（代理体系）  
-- ⚡ Real-time Gameplay（实时对局）  
-- 🌐 Online Server（在线服务器）  
-- 🔧 Customizable（可二次开发）  
-
-
-## 🎥 Live Demo | 演示
-
-
-查看真实游戏演示 👇  
- 
-
-
-![08](https://github.com/user-attachments/assets/2804b160-801b-417f-9d9b-bcf14bf4e8f8)
-![07](https://github.com/user-attachments/assets/13546423-78d4-40ee-bc7c-e77eabf1e69a)
-
-
-![06](https://github.com/user-attachments/assets/85e8f347-d8ea-4aee-ac72-1e95ef6224ce)
-![05](https://github.com/user-attachments/assets/50a20674-a513-417c-9970-c03626181d07)
-![04](https://github.com/user-attachments/assets/46f64087-07dc-4a41-9b44-5f3371c75424)
-![03](https://github.com/user-attachments/assets/9a41778e-990d-472b-8eb2-f4f29ec73a4e)
-![02](https://github.com/user-attachments/assets/5e7bfbf3-7b5b-4a7b-adb8-429e0380bad7)
-
-
-![01](https://github.com/user-attachments/assets/13fdb418-2faa-4887-a103-4e1622229f8a)
-
-
----
-
-
-## 📈 Use Cases
-
-
-- Build poker platform  
-- Game development  
-- Commercial deployment  
-
-
-![Stars](https://img.shields.io/github/stars/masterai-top/TexasHoldem-Poker-Mobile-Game-Source-Code?style=social)
-![Last Commit](https://img.shields.io/github/last-commit/masterai-top/TexasHoldem-Poker-Mobile-Game-Source-Code)
